@@ -1,0 +1,38 @@
+<div class="modal" style="display: inherit;">
+    <div class="back" (click)="close()"></div>
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ title }}</h5>
+                <button type="button" class="close" (click)="close()">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="d-flex flex-column justify-content-center">
+                        <app-image-picker class="mx-auto" [value]="model.speaker.thumbnailUrl" (change)="model.speaker.thumbnailUrl = $event"></app-image-picker>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="speakerNameInput">Name</label>
+                        <input class="form-control" id="speakerNameInput" [(ngModel)]="model.speaker.name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="speakerCompanyInput">Company</label>
+                        <input class="form-control" id="speakerCompanyInput" [(ngModel)]="model.speaker.company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="speakerCompanyRoleInput">Role</label>
+                        <input class="form-control" id="speakerCompanyRoleInput" [(ngModel)]="model.speaker.role" name="role">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"  (click)="close()">Close</button>
+                <button type="button" class="btn btn-primary" (click)="save()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

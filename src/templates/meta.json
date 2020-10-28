@@ -1,0 +1,14 @@
+[
+    {
+        "id": "community",
+        "name": "Community",
+        "thumbnail": "poster.png",
+        "orientation": 2
+    },
+    {
+        "id": "proof-of-concept",
+        "name": "Proof of Concept",
+        "thumbnail": "poster.jpg",
+        "orientation": 1
+    }
+]

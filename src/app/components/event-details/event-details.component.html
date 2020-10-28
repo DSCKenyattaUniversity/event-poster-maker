@@ -1,0 +1,45 @@
+<div>
+    <form>
+        <div class="form-group">
+            <label for="eventTitleInput">Title</label>
+            <input type="text" class="form-control" id="eventTitleInput" [(ngModel)]="model.title" name="title">
+        </div>
+        <div class="form-group">
+            <label for="eventVenueInput">Venue</label>
+            <input class="form-control" id="eventVenueInput" [(ngModel)]="model.venue" name="venue">
+        </div>
+        <div class="form-group">
+            <label for="eventDateInput">Date</label>
+            <input type="date" class="form-control" id="eventDateInput" [value]="model.date.format('YYYY-MM-DD')"
+                (change)="onDateChange($event)" name="date">
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label for="eventStartTimeInput">From</label>
+                <input type="time" class="form-control" id="eventStartTimeInput">
+            </div>
+            <div class="form-group col">
+                <label for="eventEndTimeInput">To</label>
+                <input type="time" class="form-control" id="eventEndTimeInput">
+            </div>
+        </div>
+
+        <div class="form-group pb-1 mb-0 border-bottom">
+            <label>Speakers</label>
+            <button type="button" class="btn btn-light btn-sm float-right mr-2" (click)="addSpeaker()">+</button>
+        </div>
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action p-2 border-0" *ngFor="let speaker of model.speakers" (click)="editSpeaker(speaker)">
+                <div class="d-flex align-items-center">
+                    <img width="50px" height="50px" class="border rounded-circle" [src]="speaker.thumbnailUrl" />
+                    <div class="pl-2 noselect">
+                        <div class="text-primary">{{ speaker.name }}</div>
+                        <div class="text-muted">{{ speaker.company }}</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </form>
+
+    <ng-container #dialog></ng-container>
+</div>

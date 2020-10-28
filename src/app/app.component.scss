@@ -1,0 +1,23 @@
+@import "../../node_modules/bootstrap-4-vertical-tabs/scss/custom-variables";
+@import "../../node_modules/bootstrap-4-vertical-tabs/scss/responsive-vertical-tabs";
+
+:host {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.canvas {
+    background-image: url('../assets/canvas.png');
+    padding: 50px;
+
+    #btnDownload {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+    }
+}
