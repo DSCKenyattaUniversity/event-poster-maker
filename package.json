@@ -1,6 +1,23 @@
 {
   "name": "event-poster-maker",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "homepage": "https://github.com/DSCKenyattaUniversity/event-poster-maker#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DSCKenyattaUniversity/event-poster-maker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DSCKenyattaUniversity/event-poster-maker/issues"
+  },
+  "author": {
+    "name": "Wycliffe Wasonga",
+    "email": "wycliffewasonga@gmail.com",
+    "url": ""
+  },
+  "contributors": [
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +26,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.6",
     "@angular/common": "~10.1.6",
