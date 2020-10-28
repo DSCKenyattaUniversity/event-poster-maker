@@ -16,8 +16,7 @@
     "email": "wycliffewasonga@gmail.com",
     "url": ""
   },
-  "contributors": [
-  ],
+  "contributors": [],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -35,6 +34,7 @@
     "@angular/platform-browser": "~10.1.6",
     "@angular/platform-browser-dynamic": "~10.1.6",
     "@angular/router": "~10.1.6",
+    "@wycliffewasonga/image-picker": "0.0.1",
     "bootstrap": "^4.5.3",
     "bootstrap-4-vertical-tabs": "^1.0.2",
     "dom-to-image": "^2.6.0",

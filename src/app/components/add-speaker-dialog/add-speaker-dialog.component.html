@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <form>
                     <div class="d-flex flex-column justify-content-center">
-                        <app-image-picker class="mx-auto" [value]="model.speaker.thumbnailUrl" (change)="model.speaker.thumbnailUrl = $event"></app-image-picker>
+                        <ws-image-picker class="mx-auto" [value]="model.speaker.thumbnailUrl" (onChange)="model.speaker.thumbnailUrl = $event"></ws-image-picker>
                     </div>
 
                     <div class="form-group">

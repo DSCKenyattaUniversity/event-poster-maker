@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { Compiler, CompilerFactory, COMPILER_OPTIONS, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { JitCompilerFactory } from '@angular/platform-browser-dynamic';
+import { ImagePickerModule } from '@wycliffewasonga/image-picker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {
+  AddSpeakerDialogComponent,
+  EventDetailsComponent,
   PosterTemplatesComponent, 
-  PosterTemplatesItemComponent,
-  EventDetailsComponent
+  PosterTemplatesItemComponent
 } from './components';
-import { FormsModule } from '@angular/forms';
-import { AddSpeakerDialogComponent } from './components/add-speaker-dialog/add-speaker-dialog.component';
-import { ImagePickerComponent } from './components/image-picker/image-picker.component';
 
 export function createCompiler(compilerFactory: CompilerFactory) {
   return compilerFactory.createCompiler()
@@ -24,14 +24,14 @@ export function createCompiler(compilerFactory: CompilerFactory) {
     PosterTemplatesComponent,
     PosterTemplatesItemComponent,
     EventDetailsComponent,
-    AddSpeakerDialogComponent,
-    ImagePickerComponent
+    AddSpeakerDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ImagePickerModule
   ],
   providers: [
     { provide: COMPILER_OPTIONS, useValue: { useJit: true }, multi: true },
