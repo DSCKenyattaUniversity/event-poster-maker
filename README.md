@@ -2,6 +2,9 @@
 
 Event Poster Maker is web app created to facilitate rapid creation of DSC event posters while leveraging reuse of community contributed templates.
 
+
+![Showcase](showcase.gif)
+
 Below are steps required to run the app on your local development evironment.
 
 ## Prerequisites
