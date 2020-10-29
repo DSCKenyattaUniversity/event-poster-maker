@@ -1,27 +1,44 @@
 # Event Poster Maker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+Event Poster Maker is web app created to facilitate rapid creation of DSC event posters while leveraging reuse of community contributed templates.
 
-## Development server
+Below are steps required to run the app on your local development evironment.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Prerequisites
+You will need the following installed on your system.
 
-## Code scaffolding
+1. [git](https://git-scm.com/)
+2. [node](https://nodejs.org/en/)
+3. [Angular CLI](https://github.com/angular/angular-cli)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Next
+1. Open your terminal or command prompt and cd to the location you'll be cloning the project in
+    ```
+    cd ~/
+    ```
+2. Clone the project
 
-## Build
+    ```
+    git clone https://github.com/DSCKenyattaUniversity/event-poster-maker
+    ``` 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+3. Change directory to the cloned project
+    ```
+    cd event-poster-maker
+    ```
+4. Install all the projects dependencies
+    ```
+    npm install
+    ```
 
-## Running unit tests
+5. Run local development server
+    ```
+    npm run serve
+    ```
+    This starts a development server on port 4200, so you can launch your browser and navigate to `http://localhost:4200/`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    Alternatively, run `npm run build` to build the project. This should compile the project to a folder `dist/event-poster-maker`. Copy the contents of the folder to your local webserver's docroot.
 
-## Running end-to-end tests
+## Contributing
+Contributions are welcomed via Pull Requests especially contributions for poster templates. This README may not suffice in terms of documentation on how to create templates but you can check the sample templates provided under the `src/templates` directory.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
