@@ -36,7 +36,7 @@ You will need the following installed on your system.
 
 5. Run local development server
     ```
-    npm run serve
+    npm run start
     ```
     This starts a development server on port 4200, so you can launch your browser and navigate to `http://localhost:4200/`
 
