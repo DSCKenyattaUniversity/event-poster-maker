@@ -22,7 +22,7 @@ You will need the following installed on your system.
 2. Clone the project
 
     ```
-    git clone https://github.com/DSCKenyattaUniversity/event-poster-maker
+    git clone https://github.com/DSCKenyattaUniversity/event-poster-maker.git
     ``` 
 
 3. Change directory to the cloned project
@@ -42,9 +42,16 @@ You will need the following installed on your system.
 
     Alternatively, run `npm run build` to build the project. This should compile the project to a folder `dist/event-poster-maker`. Copy the contents of the folder to your local webserver's docroot.
 
+## Creating new poster templates
+To create new poster templates, execute the command below on your terminal at the root of the project. It will prompt you for some information ie. the orientation.
+```
+npm run create-poster-template
+```
+
+If you did run `npm run start`, go to your browser and should see a blank template added in the templates list. Go to the directory where the above script created for your template and make modifications to the `poster.svg` file. You can do this by hand or using a Vector Graphics Software like [Inkscape](https://inkscape.org/) or [Adobe Illustrator](https://www.adobe.com/products/illustrator.html).
+
 ## Licensing
 Event Poster Maker is licensed under MIT License. See [LICENSE](LICENSE) for the full license text.
 
 ## Contributing
-Contributions are welcomed via Pull Requests especially contributions for poster templates. This README may not suffice in terms of documentation on how to create templates but you can check the sample templates provided under the `src/templates` directory.
-
+Contributions are welcomed via Pull Requests especially contributions for poster templates, documentation and tests.
