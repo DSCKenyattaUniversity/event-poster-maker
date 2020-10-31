@@ -42,6 +42,9 @@ You will need the following installed on your system.
 
     Alternatively, run `npm run build` to build the project. This should compile the project to a folder `dist/event-poster-maker`. Copy the contents of the folder to your local webserver's docroot.
 
+## Licensing
+Event Poster Maker is licensed under MIT License. See [LICENSE](LICENSE) for the full license text.
+
 ## Contributing
 Contributions are welcomed via Pull Requests especially contributions for poster templates. This README may not suffice in terms of documentation on how to create templates but you can check the sample templates provided under the `src/templates` directory.
 
