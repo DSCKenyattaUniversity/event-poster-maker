@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchematicsPosterTemplate",
+    "title": "Poster Template Schema",
+    "type": "object",
+    "properties": {
+        "templatesRoot": {
+            "type": "string",
+            "format": "path",
+            "description": "The path to the directory housing all of your templates."
+        },
+        "name": {
+            "type": "string",
+            "description": "A unique name for the template",
+            "x-prompt": {
+                "message": "Type a unique name to identify your template as:",
+                "type": "string"
+            }
+        },
+        "orientation": {
+            "type": "integer",
+            "description": "The orientation",
+            "enum": [
+                1,
+                2
+            ],
+            "x-prompt": {
+                "message": "Which orientation would you like to generate templates for?",
+                "type": "list",
+                "items": [
+                    {
+                        "value": 1,
+                        "label": "Portrait"
+                    },
+                    {
+                        "value": 2,
+                        "label": "Landscape"
+                    }
+                ]
+            }
+        }
+    },
+    "required": [
+        "templatesRoot",
+        "name",
+        "orientation"
+    ]
+}

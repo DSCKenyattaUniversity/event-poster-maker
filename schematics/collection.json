@@ -1,0 +1,10 @@
+{
+    "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+    "schematics": {
+        "poster-template": {
+            "description": "Generate poster template.",
+            "factory": "./poster-template",
+            "schema": "./poster-template/schema.json"
+        }
+    }
+}
