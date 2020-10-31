@@ -1,9 +1,8 @@
 {
     "id": "proof-of-concept",
     "name": "Proof of Concept",
-    "authors": [
-        {
-            "name": "Wycliffe Wasonga"
-        }
-    ]
+    "author": {
+        "name": "Wycliffe Wasonga"
+    },
+    "orientation": 1
 }

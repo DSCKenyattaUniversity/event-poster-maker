@@ -1,9 +1,8 @@
 {
     "id": "community",
     "name": "Community",
-    "authors": [
-        {
-            "name": "Wycliffe Wasonga"
-        }
-    ]
+    "author": {
+        "name": "Wycliffe Wasonga"
+    },
+    "orientation": 2
 }
