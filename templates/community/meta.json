@@ -4,5 +4,6 @@
     "author": {
         "name": "Wycliffe Wasonga"
     },
-    "orientation": 2
+    "orientation": 2,
+    "thumbnail": "poster.png"
 }

@@ -10,7 +10,7 @@
           "style": "scss"
         },
         ".:poster-template": {
-          "templatesRoot": "src/templates"
+          "templatesRoot": "templates"
         }
       },
       "root": "",
@@ -18,8 +18,9 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": ".:browser",
           "options": {
+            "templatesRoot": "templates",
             "outputPath": "dist/event-poster-maker",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -28,8 +29,7 @@
             "aot": true,
             "assets": [
               "src/favicon.png",
-              "src/assets",
-              "src/templates"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -70,7 +70,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": ".:dev-server",
           "options": {
             "browserTarget": "event-poster-maker:build"
           },

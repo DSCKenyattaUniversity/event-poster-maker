@@ -9,45 +9,29 @@ import { strings } from '@angular-devkit/core';
 import { Schema } from './schema';
 
 export default function posterTemplate(options: Schema): Rule {
-    const { templatesRoot, name, orientation } = options;
+    return (tree: Tree, context: SchematicContext) => {
+        const { templatesRoot, name, orientation } = options;
 
-    const template = {
-        root: path.join(templatesRoot, name),
-        metadata: {
-            id: strings.dasherize(name),
-            name,
-            authors: [],
-            orientation
-        }
-    };
+        const template = {
+            root: path.join(templatesRoot, name),
+            metadata: {
+                id: strings.dasherize(name),
+                name,
+                authors: [],
+                orientation,
+                thumbnail: 'poster.png'
+            }
+        };
 
-    const templateSource = apply(url('./files'), [
-        applyTemplates({
-            ...template.metadata
-        }),
-        move(templatesRoot)
-    ]);
+        const templateSource = apply(url('./files'), [
+            applyTemplates({
+                ...template.metadata
+            }),
+            move(templatesRoot)
+        ]);
 
-    return chain([
-        mergeWith(templateSource),
-        (tree: Tree) => {
-            const metaFilePath = path.join(options.templatesRoot, 'meta.json');
-            const content = tree.read(metaFilePath)?.toString('utf-8') || '[]';
-            const metadata = JSON.parse(content);
-
-            const output = JSON.stringify([
-                ...metadata,
-                {
-                    id: template.metadata.id,
-                    name: template.metadata.name,
-                    thumbnail: "poster.png",
-                    orientation: template.metadata.orientation
-                }
-            ], null, 4);
-
-            tree.overwrite(metaFilePath, output);
-
-            return tree;
-        }
-    ]);
+        return chain([
+            mergeWith(templateSource)
+        ])(tree, context);
+    }
 }

@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "type": "object",
+    "properties": {
+        "browserTarget": {
+            "type": "string"
+        },
+        "port": {
+            "type": "number",
+            "default": 4200
+        }
+    },
+    "required": [
+        "browserTarget"
+    ]
+}

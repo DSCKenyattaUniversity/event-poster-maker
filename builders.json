@@ -1,0 +1,15 @@
+{
+    "$schema": "./node_modules/@angular-devkit/architect/src/builders-schema.json",
+    "builders": {
+        "browser": {
+            "implementation": "./builders/browser/index",
+            "schema": "./builders/browser/schema.json",
+            "description": "Event poster maker browser builder"
+        },
+        "dev-server": {
+            "implementation": "./builders/dev-server/index",
+            "schema": "./builders/dev-server/schema.json",
+            "description": "Event poster maker dev server builder"
+        }
+    }
+}

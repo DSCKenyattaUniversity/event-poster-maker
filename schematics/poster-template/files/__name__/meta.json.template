@@ -4,5 +4,6 @@
     "author": {
         "name": ""
     },
-    "orientation": <%= orientation %>
+    "orientation": <%= orientation %>,
+    "thumbnail": "<%= thumbnail %>"
 }

@@ -33,8 +33,13 @@ You will need the following installed on your system.
     ```
     npm install
     ```
+5. Build the tools needed for subsequent commands to work correctly.
+    ```
+    npm run build:builders
+    npm run build:schematics
+    ```
 
-5. Run local development server
+6. Run local development server
     ```
     npm run start
     ```
