@@ -5,8 +5,10 @@ import {
     applyTemplates,
     move, chain, mergeWith
 } from '@angular-devkit/schematics';
-import { strings } from '@angular-devkit/core';
 import { Schema } from './schema';
+import { Chance } from 'chance';
+
+const chance = Chance();
 
 export default function posterTemplate(options: Schema): Rule {
     return (tree: Tree, context: SchematicContext) => {
@@ -15,7 +17,7 @@ export default function posterTemplate(options: Schema): Rule {
         const template = {
             root: path.join(templatesRoot, name),
             metadata: {
-                id: strings.dasherize(name),
+                id: chance.guid(),
                 name,
                 authors: [],
                 orientation,
