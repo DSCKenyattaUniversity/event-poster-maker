@@ -4,6 +4,7 @@ import Speaker from 'src/app/models/speaker';
 
 import Event from '../../models/event';
 import { AddSpeakerDialogComponent } from '../add-speaker-dialog/add-speaker-dialog.component';
+import { Chance } from 'chance';
 
 @Component({
   selector: 'app-event-details',
@@ -16,10 +17,13 @@ export class EventDetailsComponent implements OnInit {
   @ViewChild('dialog', { read: ViewContainerRef })
   container: ViewContainerRef;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
+  // TODO: Let the DI provide this
+  private chance: any;
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
+    this.chance = Chance();
+  }
 
   ngOnInit(): void {
-    moment()
   }
 
   onDateChange(event) {
@@ -32,7 +36,7 @@ export class EventDetailsComponent implements OnInit {
     
     const component = this.container.createComponent(factory);
 
-    const speaker = new Speaker(Math.random(), '', '', '');
+    const speaker = new Speaker(this.chance.guid(), '', '', '');
     component.instance.model.speaker = speaker;
     component.instance.onSave.subscribe(evt => {
       this.model.speakers.push(speaker);
