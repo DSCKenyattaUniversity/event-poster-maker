@@ -30,6 +30,14 @@ export class EventDetailsComponent implements OnInit {
     this.model.date = moment(String(event.target.value));
   }
 
+  onStartTimeChange(event) {
+    this.model.startTime = moment(String(event.target.value), 'HH:mm');
+  }
+
+  onEndTimeChange(event) {
+    this.model.endTime = moment(String(event.target.value), 'HH:mm');
+  }
+
   addSpeaker() {
     const factory = this.componentFactoryResolver.resolveComponentFactory(AddSpeakerDialogComponent);
     this.container.clear();

@@ -39,7 +39,9 @@ export class AppComponent {
   constructor(
     private compiler: Compiler,
     private imagingService: ImagingService
-  ) { }
+  ) {
+    this.model.event.subtitle = 'Subtitle';
+  }
 
   ngOnDestroy() {
     this.destroyContainerRef();
