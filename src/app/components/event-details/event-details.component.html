@@ -5,6 +5,10 @@
             <input type="text" class="form-control" id="eventTitleInput" [(ngModel)]="model.title" name="title">
         </div>
         <div class="form-group">
+            <label for="eventSubtitleInput">Subtitle</label>
+            <input type="text" class="form-control" id="eventSubtitleInput" [(ngModel)]="model.subtitle" name="subtitle">
+        </div>
+        <div class="form-group">
             <label for="eventVenueInput">Venue</label>
             <input class="form-control" id="eventVenueInput" [(ngModel)]="model.venue" name="venue">
         </div>
@@ -16,11 +20,13 @@
         <div class="form-row">
             <div class="form-group col">
                 <label for="eventStartTimeInput">From</label>
-                <input type="time" class="form-control" id="eventStartTimeInput">
+                <input type="time" class="form-control" id="eventStartTimeInput" [value]="model.startTime.format('HH:mm')"
+                (change)="onStartTimeChange($event)" name="startTime">
             </div>
             <div class="form-group col">
                 <label for="eventEndTimeInput">To</label>
-                <input type="time" class="form-control" id="eventEndTimeInput">
+                <input type="time" class="form-control" id="eventEndTimeInput" [value]="model.endTime.format('HH:mm')"
+                (change)="onEndTimeChange($event)" name="endTime">
             </div>
         </div>
 
