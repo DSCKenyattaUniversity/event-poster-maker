@@ -1,6 +1,10 @@
 <div>
     <form>
         <div class="form-group">
+            <label for="eventCommunityNameInput">Community Name</label>
+            <input type="text" class="form-control" id="eventCommunityNameInput" [(ngModel)]="model.communityName" name="communityName" placeholder="Kenyatta University">
+        </div>
+        <div class="form-group">
             <label for="eventTitleInput">Title</label>
             <input type="text" class="form-control" id="eventTitleInput" [(ngModel)]="model.title" name="title">
         </div>
