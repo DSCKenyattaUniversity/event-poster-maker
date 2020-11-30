@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="100%" height="100%" viewBox="0 0 842 595">
+    <style>
+        text {
+            fill: #ffffff;
+        }
+
+        .club {
+            font-size: 1.5em;
+        }
+
+        .chapter {
+            font-size: 1.3em;
+        }
+
+        .title {
+            font-size: 2em;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+        }
+    </style>
+
+    <g>
+        <rect id="background" width="100%" height="100%" />
+
+        <image x="442" y="45" width="400" xlink:href="ussd.png" />
+
+        <image x="10" y="50" width="60" xlink:href="logo.png" />
+
+        <text x="80" y="75">
+            <tspan class="club">Developer Student Clubs</tspan>
+            <tspan class="chapter" x="80" dy="1.2em">Kenyatta University</tspan>
+        </text>
+
+        <text x="80" y="200">
+            <tspan class="title">{{ event.title }}</tspan>
+            <tspan class="subtitle" x="80" dy="1.8em">{{ event.subtitle }}</tspan>
+        </text>
+
+        <text x="104" y="375" font-size="1.2em">
+            <tspan>{{ event.startTime.format('h:mm A z') || '[ Time ]' }}</tspan>
+            <tspan x="104" dy="2em">{{ event.date.format('dddd DD, MMMM YYYY') || '[ Date ]' }}</tspan>
+            <tspan x="104" dy="2em">{{ event.venue || '[ Venue ]' }}</tspan>
+        </text>
+
+        <image x="80" y="359" height="1.2em" xlink:href="time.svg" />
+        <image x="80" y="396" height="1.2em" xlink:href="date.svg" />
+        <image x="80" y="435" height="1.2em" xlink:href="location.svg" />
+   </g>
+</svg>
