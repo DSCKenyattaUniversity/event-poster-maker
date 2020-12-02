@@ -2,6 +2,7 @@ import * as moment from 'moment';
 import Speaker from './speaker';
 
 export default class Event {
+    communityName: String;
     subtitle: string;
     startTime: moment.Moment;
     endTime: moment.Moment;
