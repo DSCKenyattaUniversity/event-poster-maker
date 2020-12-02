@@ -64,7 +64,7 @@
 
             <text x="50%" y="110" text-anchor="middle">
                 <tspan>Developer Student Clubs</tspan>
-                <tspan dy="1.2em" x="50%">Kenyatta University</tspan>
+                <tspan dy="1.2em" x="50%">{{ event.communityName || 'Community Name' }}</tspan>
             </text>
         </g>
 
