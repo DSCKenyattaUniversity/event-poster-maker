@@ -60,3 +60,6 @@ Event Poster Maker is licensed under MIT License. See [LICENSE](LICENSE) for the
 
 ## Contributing
 Contributions are welcomed via Pull Requests especially contributions for poster templates, documentation and tests.
+
+## Watch
+[![Watch the video](watch.png)](https://youtu.be/z2Oj7jL3JMg)
