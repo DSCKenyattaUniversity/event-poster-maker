@@ -66,6 +66,10 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "github-pages": {
+              "outputPath": "docs",
+              "baseHref": "/event-poster-maker"
             }
           }
         },

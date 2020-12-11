@@ -21,6 +21,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh-pages": "ng build --configuration=github-pages",
     "build:builders": "tsc -p tsconfig.builders.json",
     "build:schematics": "tsc -p tsconfig.schematics.json",
     "test": "ng test",
