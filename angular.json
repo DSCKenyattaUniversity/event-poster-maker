@@ -69,7 +69,7 @@
             },
             "github-pages": {
               "outputPath": "docs",
-              "baseHref": "/event-poster-maker"
+              "baseHref": "/event-poster-maker/"
             }
           }
         },
