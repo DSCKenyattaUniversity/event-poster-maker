@@ -11,6 +11,6 @@ export class PosterTemplatesService {
   constructor(private http: HttpClient) { }
 
   allTemplates(): Observable<Template[]> {
-    return this.http.get<Template[]>('/templates/meta.json');
+    return this.http.get<Template[]>('templates/meta.json');
   }
 }

@@ -56,7 +56,7 @@ export class AppComponent {
 
     this.model.loading = true;
 
-    fetch(`/templates/${template.id}/poster.svg`)
+    fetch(`templates/${template.id}/poster.svg`)
       .then(response => response.text())
       .then(svg => {
         const previewComponent = Component({
