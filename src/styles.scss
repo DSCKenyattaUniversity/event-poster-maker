@@ -17,6 +17,8 @@
 @import "../node_modules/bootstrap/scss/nav";
 @import "../node_modules/bootstrap/scss/close";
 
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
 body {
     height: 100vh;
     overflow: hidden;
