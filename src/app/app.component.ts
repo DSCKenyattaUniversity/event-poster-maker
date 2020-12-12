@@ -1,3 +1,4 @@
+import { Breakpoints, BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import {
   Compiler,
@@ -5,7 +6,8 @@ import {
   ComponentRef,
   NgModule,
   ViewChild,
-  ViewContainerRef
+  ViewContainerRef,
+  ViewEncapsulation
 } from '@angular/core';
 import * as moment from 'moment';
 
@@ -16,19 +18,22 @@ import { ImagingService } from './services/imaging.service';
 enum Tabs {
   TEMPLATES = 1,
   EVENT_DETAILS = 2,
-  STYLES = 3
+  STYLES = 3,
+  PREVIEW = 0 /* Handset only */
 };
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   model = {
     event: new Event('Title', moment(), 'Venue', []),
     loading: false,
-    selected: Tabs.TEMPLATES
+    selected: Tabs.TEMPLATES,
+    isHandset: false
   };
 
   private componentRef: ComponentRef<any>;
@@ -37,10 +42,24 @@ export class AppComponent {
   container: ViewContainerRef;
 
   constructor(
+    private breakpointObserver: BreakpointObserver,
     private compiler: Compiler,
     private imagingService: ImagingService
   ) {
     this.model.event.subtitle = 'Subtitle';
+  }
+
+  ngOnInit() {
+    this.breakpointObserver
+      .observe(Breakpoints.Handset)
+      .subscribe((state: BreakpointState) => {
+        this.model.isHandset = state.matches;
+
+        if (state.matches) {
+          // Show preview
+          this.model.selected = Tabs.PREVIEW
+        }
+      });
   }
 
   ngOnDestroy() {

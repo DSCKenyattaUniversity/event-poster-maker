@@ -1,6 +1,64 @@
-<div class="container-fluid h-100 overflow-hidden">
-  <div class="row h-100">
-    <div class="col h-100 border-right canvas">
+<mat-sidenav-container class="app-container">
+  <mat-sidenav opened mode="side" position="end" class="h-100" style="width: 360px" *ngIf="!model.isHandset">
+    <div class="h-100 d-flex">
+      <ng-template *ngTemplateOutlet="template1" class="flex-grow-1"></ng-template>
+
+      <div class="border-left" style="width: 45px;">
+        <ul class="nav sideways-tabs nav-tabs right-tabs" style="right: 1.95rem;">
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{ active: model.selected == 1 }" (click)="model.selected = 1">Templates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{ active: model.selected == 2 }" (click)="model.selected = 2">Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{ active: model.selected == 3 }" (click)="model.selected = 3">Style</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="h-100">
+    <ng-template [ngTemplateOutlet]="posterPreview" *ngIf="!model.isHandset"></ng-template>
+
+    <ng-template class="h-100" [ngTemplateOutlet]="template1" *ngIf="model.isHandset"></ng-template>
+  </mat-sidenav-content>
+
+  <ng-template #template1>
+    <mat-tab-group class="h-100 w-100" [ngClass]="{ 'invisible-tabs': !model.isHandset }" mat-stretch-tabs headerPosition="below" animationDuration="0ms" [selectedIndex]="model.selected">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>preview</mat-icon>
+        </ng-template>
+
+        <ng-template [ngTemplateOutlet]="posterPreview" *ngIf="model.isHandset"></ng-template>
+      </mat-tab>
+      
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>perm_media</mat-icon>
+        </ng-template>
+
+        <app-poster-templates (onSelectionChange)="onTemplateChanged($event)"></app-poster-templates>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>details</mat-icon>
+        </ng-template>
+
+        <app-event-details [event]="model.event"></app-event-details>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>style</mat-icon>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </ng-template>
+
+  <ng-template #posterPreview>
+    <div class="h-100 canvas">
       <ng-container #preview></ng-container>
 
       <button id="btnDownload" type="button" class="btn btn-primary" (click)="downloadPoster()">
@@ -13,28 +71,5 @@
         </svg>
       </button>
     </div>
-    <div class="col-3 h-100 p-2 overflow-auto tab-content">
-      <div class="tab-pane" [ngClass]="{ active: model.selected == 1 }">
-        <app-poster-templates (onSelectionChange)="onTemplateChanged($event)"></app-poster-templates>
-      </div>
-      <div class="tab-pane p-2" [ngClass]="{ active: model.selected == 2 }">
-        <app-event-details [event]="model.event"></app-event-details>
-      </div>
-      <div class="tab-pane" [ngClass]="{ active: model.selected == 3 }">
-      </div>
-    </div>
-    <div class="border-left" style="width: 45px;">
-      <ul class="nav sideways-tabs nav-tabs right-tabs" style="right: 1.95rem;">
-        <li class="nav-item">
-          <a class="nav-link" [ngClass]="{ active: model.selected == 1 }" (click)="model.selected = 1">Templates</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [ngClass]="{ active: model.selected == 2 }" (click)="model.selected = 2">Details</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [ngClass]="{ active: model.selected == 3 }" (click)="model.selected = 3">Style</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+  </ng-template>
+</mat-sidenav-container>
