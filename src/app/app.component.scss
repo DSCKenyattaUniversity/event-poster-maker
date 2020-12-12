@@ -11,6 +11,10 @@
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
+.app-container {
+    height: 100vh;
+}
+
 .canvas {
     background-image: url('../assets/canvas.png');
     padding: 50px;
@@ -19,5 +23,26 @@
         position: absolute;
         bottom: 8px;
         right: 8px;
+    }
+}
+
+.invisible-tabs {
+    .mat-tab-header {
+        display: none;
+    }
+}
+
+.mat-tab-group {
+    .mat-tab-body-wrapper {
+        flex-grow: 1;
+    
+        .mat-tab-body .mat-tab-body-content {
+            padding: 8px;
+        }
+
+        .mat-tab-body:nth-child(1) .mat-tab-body-content {
+            padding: 0px;
+        }
+
     }
 }
